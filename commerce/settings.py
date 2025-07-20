@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-default-secret-key')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 # Allowed Hosts
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'api']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'api', '.vercel.app']
 
 # Application definition
 
