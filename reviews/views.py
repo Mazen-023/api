@@ -71,3 +71,10 @@ def my_review_for_product(request, product_id):
     reviews = Review.objects.filter(user=request.user, product_id=product_id)
     serializer = ReviewSerializer(reviews, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def list_all_reviews(request):
+    reviews = Review.objects.all()
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)

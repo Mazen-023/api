@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.list_all_reviews, name='review-list-all'),  # GET /api/v1/Review/
     path('<int:product_id>/', views.add_review, name='review-add'),  # POST /api/v1/Review/:productId
     path('<int:product_id>/list/', views.list_reviews, name='review-list'),  # GET /api/v1/Review/:productId
     path('<int:review_id>/update/', views.update_review, name='review-update'),  # PUT /api/v1/Review/:reviewId
